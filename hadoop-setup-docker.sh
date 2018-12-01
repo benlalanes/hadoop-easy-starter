@@ -33,11 +33,11 @@ echo 'export YARN_HOME=$HADOOP_HOME' >> ~/.bashrc
 echo 'export HADOOP_COMMON_LIB_NATIVE_DIR=$HADOOP_HOME/lib/native' >> ~/.bashrc
 echo 'export PATH=$PATH:$HADOOP_HOME/sbin:$HADOOP_HOME/bin' >> ~/.bashrc
 
-echo 'export JAVA_HOME=/usr/lib/jvm/java-1.8.0-openjdk-amd64' | sudo tee -a /home/$USER/hadoop/hadoop/etc/hadoop/hadoop-env.sh
-echo '<configuration><property><name>fs.default.name</name><value>hdfs://localhost:9000</value></property></configuration>' | sudo tee /home/$USER/hadoop/hadoop/etc/hadoop/core-site.xml
-echo "<configuration><property><name>dfs.replication</name><value>1</value></property><property><name>dfs.name.dir</name><value>file:///home/$USER/hadoopinfra/hdfs/namenode</value></property><property><name>dfs.data.dir</name><value>file:///home/$USER/hadoopinfra/hdfs/datanode</value></property></configuration>" | sudo tee /home/$USER/hadoop/hadoop/etc/hadoop/hdfs-site.xml
-echo '<configuration><property><name>yarn.resourcemanager.hostname</name><value>127.0.0.1</value></property><property><name>yarn.nodemanager.aux-services</name><value>mapreduce_shuffle</value></property></configuration>' | sudo tee /home/$USER/hadoop/hadoop/etc/hadoop/yarn-site.xml
-echo '<configuration><property><name>mapreduce.framework.name</name><value>yarn</value></property></configuration>' | sudo tee /home/$USER/hadoop/hadoop/etc/hadoop/mapred-site.xml
+echo 'export JAVA_HOME=/usr/lib/jvm/java-1.8.0-openjdk-amd64' | tee -a /home/$USER/hadoop/hadoop/etc/hadoop/hadoop-env.sh
+echo '<configuration><property><name>fs.default.name</name><value>hdfs://localhost:9000</value></property></configuration>' | tee /home/$USER/hadoop/hadoop/etc/hadoop/core-site.xml
+echo "<configuration><property><name>dfs.replication</name><value>1</value></property><property><name>dfs.name.dir</name><value>file:///home/$USER/hadoopinfra/hdfs/namenode</value></property><property><name>dfs.data.dir</name><value>file:///home/$USER/hadoopinfra/hdfs/datanode</value></property></configuration>" | tee /home/$USER/hadoop/hadoop/etc/hadoop/hdfs-site.xml
+echo '<configuration><property><name>yarn.resourcemanager.hostname</name><value>127.0.0.1</value></property><property><name>yarn.nodemanager.aux-services</name><value>mapreduce_shuffle</value></property></configuration>' | tee /home/$USER/hadoop/hadoop/etc/hadoop/yarn-site.xml
+echo '<configuration><property><name>mapreduce.framework.name</name><value>yarn</value></property></configuration>' | tee /home/$USER/hadoop/hadoop/etc/hadoop/mapred-site.xml
 
 echo -e "\n"
 echo "Installation Finished!"
