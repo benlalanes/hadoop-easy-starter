@@ -38,3 +38,11 @@ echo '<configuration><property><name>fs.default.name</name><value>hdfs://localho
 echo "<configuration><property><name>dfs.replication</name><value>1</value></property><property><name>dfs.name.dir</name><value>file:///home/$USER/hadoopinfra/hdfs/namenode</value></property><property><name>dfs.data.dir</name><value>file:///home/$USER/hadoopinfra/hdfs/datanode</value></property></configuration>" | sudo tee /home/$USER/hadoop/hadoop/etc/hadoop/hdfs-site.xml
 echo '<configuration><property><name>yarn.resourcemanager.hostname</name><value>127.0.0.1</value></property><property><name>yarn.nodemanager.aux-services</name><value>mapreduce_shuffle</value></property></configuration>' | sudo tee /home/$USER/hadoop/hadoop/etc/hadoop/yarn-site.xml
 echo '<configuration><property><name>mapreduce.framework.name</name><value>yarn</value></property></configuration>' | sudo tee /home/$USER/hadoop/hadoop/etc/hadoop/mapred-site.xml
+
+echo -e "\n"
+echo "Installation Finished!"
+echo "Run the following commands to format and run HDFS and run YARN:"
+echo '$ source ~/.bashrc'
+echo '$ hdfs namenode -format'
+echo '$ start-dfs.sh'
+echo '$ start-yarn.sh'
